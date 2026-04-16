@@ -11,10 +11,10 @@ Bu proje, favori parfümlerin fiyatlarını farklı mağazalardan (şu an için 
 ## 📸 Uygulamadan Görüntüler
 
 ### Web Arayüzü (ASP.NET Core MVC)
-![Ana Sayfa](img\img3.png)
+![Ana Sayfa](img/img3.png)
 
 ### Botun Çalışma Anı
-![Python Bot](img\img1.png)
+![Python Bot](img/img1.png)
 
 ### Veritabanı
 ![Veritabanı Şeması](img/img2.png)
