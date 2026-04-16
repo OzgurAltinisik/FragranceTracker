@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="container mt-4">
+    <div class="row align-items-center mb-5 pb-5 border-bottom">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold text-dark mb-3">
+                Akıllı Parfüm Fiyat <span class="text-primary">Takip Robotu</span>
+            </h1>
+            <p class="lead text-muted mb-4">
+                Favori parfümlerinizin fiyatlarını sizin için 7/24 izliyoruz. Mağazaları sürekli tarayan Python botumuz, belirlediğiniz hedefin altına inildiğinde anında e-posta kutunuza indirim alarmı gönderir.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-sm" asp-area="" asp-controller="Fragrances" asp-action="Index">
+                    Fiyatları İncele
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block text-center">
+            <div style="font-size: 8rem;">
+                🤖✨
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center mt-4">
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white rounded-4 h-100 shadow-sm border border-light">
+                <div class="mb-3" style="font-size: 2.5rem;">⏱️</div>
+                <h4 class="fw-bold text-dark">7/24 Otomatik Takip</h4>
+                <p class="text-muted small">Python Selenium altyapısı ile çalışan arka plan servisimiz, fiyat değişimlerini sizin yerinize sürekli kontrol eder.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white rounded-4 h-100 shadow-sm border border-light">
+                <div class="mb-3" style="font-size: 2.5rem;">📧</div>
+                <h4 class="fw-bold text-dark">Anında Bildirim</h4>
+                <p class="text-muted small">Veritabanına kaydettiğiniz hedef fiyata ulaşıldığı an, SMTP üzerinden doğrudan kişisel mailinize uyarı gönderilir.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white rounded-4 h-100 shadow-sm border border-light">
+                <div class="mb-3" style="font-size: 2.5rem;">📊</div>
+                <h4 class="fw-bold text-dark">Merkezi Kontrol</h4>
+                <p class="text-muted small">ASP.NET Core MVC mimarisi ile geliştirilen bu web arayüzünden, en güncel piyasa durumunu tek ekranda inceleyin.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    /* Buton üzerine gelince ufak bir animasyon */
+    .btn-primary {
+        transition: transform 0.2s;
+    }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+    /* Özellik kartları animasyonu */
+    .shadow-sm {
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+        .shadow-sm:hover {
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+            transform: translateY(-5px);
+        }
+</style>

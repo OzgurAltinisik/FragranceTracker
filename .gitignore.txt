@@ -1,0 +1,13 @@
+# Visual Studio / .NET gereksizleri
+bin/
+obj/
+.vs/
+*.user
+
+# Python gereksizleri
+__pycache__/
+*.pyc
+venv/
+
+# Veritabanı (İstersen veritabanını da yükleyebilirsin ama genelde boş gönderilir)
+# parfum_fiyatlari.db

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ParfumTakipWeb.Models.FiyatGecmisi>
+
+@{
+    ViewData["Title"] = "Parfüm Fiyat Takibi";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">Parfüm Fiyat Takibi</h1>
+        <p class="lead text-muted">Boyner fiyatları anlık olarak listelenir.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold text-dark mb-3">@item.urun_adi</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-light text-dark border p-2">@item.magaza</span>
+                            <span class="text-muted small">@item.tarih</span>
+                        </div>
+                        <h3 class="text-primary fw-bold">@item.fiyat.ToString("N2") TL</h3>
+                    </div>
+                    <div class="card-footer bg-white border-0 p-4 pt-0">
+                        <a href="@item.url" target="_blank" class="btn btn-outline-primary w-100 rounded-pill fw-bold">
+                            Mağazaya Git
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    body { background-color: #f8f9fa; }
+    .card { transition: transform 0.3s ease; }
+    .card:hover { transform: translateY(-10px); }
+</style>
