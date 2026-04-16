@@ -14,8 +14,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 # --- 1. MAİL AYARLARI ---
-GONDERICI_MAIL = "ozguraltinisik999@gmail.com" 
-UYGULAMA_SIFRESI = "vrhkxjlzaxkhxyvk" 
+GONDERICI_MAIL = "YOUR_EMAIL_HERE@gmail.com" 
+UYGULAMA_SIFRESI = "YOUR_APP_PASSWORD_HERE" 
 
 # --- 2. MAİL GÖNDERME FONKSİYONU ---
 def mail_gonder(alici_mail, urun_adi, urun_linki, guncel_fiyat):
@@ -103,6 +103,8 @@ PARFUMLER = [
     }
 ]
 
+
+
 # --- 4. VERİTABANI HAZIRLIĞI ---
 def veritabanini_hazirla():
     db = sqlite3.connect("parfum_fiyatlari.db")
@@ -147,9 +149,14 @@ wait = WebDriverWait(driver, 15)
 
 def fiyati_temizle(fiyat_metni):
     try:
-        temiz = fiyat_metni.replace("TL", "").replace("₺", "").strip()
+        # 1. Aşama: Boyner'in eklediği kampanya kelimelerini ve alt satırları (\n) sil
+        temiz = fiyat_metni.replace("Sepette", "").replace("\n", "")
+        
+        # 2. Aşama: Standart temizlik işlemlerimiz (TL, Nokta, Virgül)
+        temiz = temiz.replace("TL", "").replace("₺", "").strip()
         temiz = temiz.replace(".", "")
         temiz = temiz.replace(",", ".")
+        
         return float(temiz)
     except:
         return 0.0
@@ -164,12 +171,17 @@ try:
         
         print(f"\n[{urun_adi}] için siteye gidiliyor...")
         driver.get(url)
-        time.sleep(4) 
+        time.sleep(4)
+
         
         fiyat_metni = ""
         try:
             fiyat_elementi = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "h2[class*='price_priceMain']")))
             fiyat_metni = fiyat_elementi.text
+            
+            # --- DEBUG (HATA AYIKLAMA) SATIRI ---
+            print(f"DEBUG [{urun_adi}]: Siteden çekilen ham metin -> '{fiyat_metni}'")
+            
         except Exception as e:
             print(f"HATA: {urun_adi} fiyatı bulunamadı. Stokta olmayabilir.")
 
