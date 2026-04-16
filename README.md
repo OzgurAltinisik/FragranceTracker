@@ -8,6 +8,16 @@ Bu proje, favori parfümlerin fiyatlarını farklı mağazalardan (şu an için 
 * **Modern Web Arayüzü:** ASP.NET Core MVC ile geliştirilen, veritabanındaki fiyatları şık kartlar halinde sunan kontrol paneli.
 * **İnsani Bot Davranışı:** Anti-ban koruması için rastgele bekleme süreleri (Randomized Delay).
 * **Dinamik Fiyat Temizleme:** Mağaza kampanyaları ("Sepette %10 İndirim" vb.) kaynaklı HTML değişikliklerini otomatik algılama ve temizleme.
+## 📸 Uygulamadan Görüntüler
+
+### Web Arayüzü (ASP.NET Core MVC)
+![Ana Sayfa](img\img3.png)
+
+### Botun Çalışma Anı
+![Python Bot](img\img1.png)
+
+### Veritabanı
+![Veritabanı Şeması](img/img2.png)
 
 ## 🛠 Teknoloji Yığını
 * **Backend:** Python 3.x, C# (.NET)
