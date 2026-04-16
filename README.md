@@ -16,6 +16,9 @@ Bu proje, favori parfümlerin fiyatlarını farklı mağazalardan (şu an için 
 ### Botun Çalışma Anı
 ![Python Bot](img/img1.png)
 
+### Veritabanı
+![Veritabanı Şeması](img/img.png)
+
 ## 🛠 Teknoloji Yığını
 * **Backend:** Python 3.x, C# (.NET)
 * **Web Framework:** ASP.NET Core MVC
